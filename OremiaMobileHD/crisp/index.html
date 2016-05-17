@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chat</title>
+
+  </head>
+
+  <body>
+
+
+  </body>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">CRISP_WEBSITE_ID = "-K4sfPrIMy3qckUKycQD";(
+        function(){
+          d=document;
+          s=d.createElement("script");
+          s.src="https://client.crisp.im/l.js";
+          s.async=0;
+          d.getElementsByTagName("head")[0].appendChild(s);
+         
+         
+    })();</script>
+    <script>
+    $(document).ready(function(){
+      var checkExist = setInterval(function() {
+      if ($('.crisp-client-excerpt-minimized').length) {
+        console.log( $(".crisp-client-excerpt-minimized").html());
+          resize();
+          clearInterval(checkExist);
+        }
+      }, 300);
+       
+    })
+    $(window).resize(function(){
+      setInterval(function() {
+      if ($('.crisp-client-excerpt-minimized').length) {
+        console.log( $(".crisp-client-excerpt-minimized").html());
+        resize()
+        }
+      }, 200);
+      
+      })
+    function resize(){
+       // $(".crisp-client-excerpt-minimized").attr("data-visible","false");
+          $(".crisp-client-excerpt-chat").attr("data-visible","true");
+          $(".crisp-client-excerpt-chat").attr("class", "crisp-client-excerpt-chat crisp-client-excerpt-chat-animate-maximize");
+          $(".crisp-client-container").attr("data-full-view","true");
+          $(".crisp-client-excerpt-chat").attr("style","width:"+$(window).width()+"px !important;");
+          $(".crisp-client-excerpt-chat-content").attr("style","height:"+($(window).height()-$(".crisp-client-excerpt-chat-header").height())+"px !important;");
+          $(".crisp-client-excerpt-chat-content-one-form-itself-textarea").attr("style","width: "+($(window).width()-$(".crisp-client-excerpt-chat-content-one-form-actions").width())+"px !important;");
+    }
+    </script>
+</html>
